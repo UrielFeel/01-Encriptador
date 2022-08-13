@@ -8,28 +8,56 @@ const keys = {
 }
 
 function encriptar (msj) {
-  Object.entries(keys).forEach(key => {
-    msj.replace(key[0], key[1])
-  })
-  return msj
+  let encryptedMsj = ''
+
+  for (let i = 0; i < msj.length; i++) {
+    if (Object.keys(keys).includes(msj[i])) {
+      encryptedMsj += keys[msj[i]]
+    } else {
+      encryptedMsj += msj[i]
+    }
+  }
+  return encryptedMsj
 }
 
 function desencriptar (msj) {
   Object.entries(keys).forEach(key => {
-    msj.replace(key[1], key[0])
+    msj = msj.replace(key[1], key[0])
   })
   return msj
 }
 
-const input = document.querySelector('.input')
-const output = document.querySelector('.output')
-const btnEncriptar = document.querySelector('.btn-encriptar')
-const btnDesencriptar = document.querySelector('.btn-desencriptar')
+function copyToClipBoard (msj) {
+  navigator.clipboard.writeText(msj)
+    .then(() => {
+      console.log('Text copied to clipboard...')
+    })
+    .catch(err => {
+      console.log('Something went wrong', err)
+    })
+}
 
-btnEncriptar.onclick(() => {
+const input = document.querySelector('#input')
+const output = document.querySelector('#output')
+const btnEncriptar = document.querySelector('#encriptar')
+const btnDesencriptar = document.querySelector('#btn-desencriptar')
+const btnCopy = document.querySelector('#copy')
+
+btnEncriptar.addEventListener('click', (e) => {
+  console.log('encriptando...')
   output.innerText = encriptar(input.value)
+  input.value = ''
 })
 
-btnDesencriptar.onclick(() => {
+btnDesencriptar.onclick = () => {
+  console.log('desencriptando')
   output.innerText = desencriptar(input.value)
-})
+  input.value = ''
+}
+
+btnCopy.onclick = () => {
+  if (!navigator.clipboard) console.log('Clipboard API not available')
+  else {
+    copyToClipBoard(output.innerText)
+  }
+}
