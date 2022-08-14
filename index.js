@@ -48,7 +48,7 @@ btnEncriptar.addEventListener('click', (e) => {
   if (input.value === '') return
 
   console.log('encriptando...')
-  document.querySelector('.msj').style = 'display: initial'
+  document.querySelector('.msj').style = 'display: flex'
   document.querySelector('.no-msj').style = 'display: none'
 
   output.innerText = encriptar(input.value)
@@ -58,7 +58,7 @@ btnEncriptar.addEventListener('click', (e) => {
 btnDesencriptar.onclick = () => {
   if (input.value === '') return
 
-  document.querySelector('.msj').style = 'display: initial'
+  document.querySelector('.msj').style = 'display: flex'
   document.querySelector('.no-msj').style = 'display: none'
 
   console.log('desencriptando')

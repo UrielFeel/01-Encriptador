@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./public/Vector.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./normalice.css">
   <link rel="stylesheet" href="./style.css">
   <title>Encriptador</title>
@@ -27,14 +26,17 @@
           <span > Solo letras minúsculas y sin acentos</span>
         </div>
         
-        <a href="#output">
-        <button class="btn" id="encriptar">Encriptar</button>
-        </a>
+        <div class="btn-group">
 
-        <a href="#output">
-        <button class="btn" id="btn-desencriptar">Desencriptar</button>
-        </a>
-        
+          <a href="#output">
+            <button class="btn" id="encriptar">Encriptar</button>
+          </a>
+          
+          <a href="#output">
+            <button class="btn" id="btn-desencriptar">Desencriptar</button>
+          </a>
+          
+        </div>
         
       </div>
     </section>
@@ -43,6 +45,7 @@
     <section class="output-container">
 
       <div class="no-msj">
+        <img src="./public/no-msg.png" alt="message not found" class="img-no-msg">
         <h3>Ningún mensaje fue encontrado</h3>
         <p>Ingresa el texto que desees encriptar o desencriptar.</p>
       </div>
@@ -53,19 +56,8 @@
       </div>
 
     </section>
-    
-    
 
-
-  </main>
-  
-    
- 
-
-
-
-
-  
+  </main>  
   
 </body>
 <script src="./index.js"></script>
