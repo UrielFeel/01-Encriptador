@@ -21,10 +21,11 @@ function encriptar (msj) {
 }
 
 function desencriptar (msj) {
+  let decryptedMsj = msj
   Object.entries(keys).forEach(key => {
-    msj = msj.replace(key[1], key[0])
+    decryptedMsj = decryptedMsj.replaceAll(key[1], key[0])
   })
-  return msj
+  return decryptedMsj
 }
 
 function copyToClipBoard (msj) {
@@ -44,12 +45,22 @@ const btnDesencriptar = document.querySelector('#btn-desencriptar')
 const btnCopy = document.querySelector('#copy')
 
 btnEncriptar.addEventListener('click', (e) => {
+  if (input.value === '') return
+
   console.log('encriptando...')
+  document.querySelector('.msj').style = 'display: initial'
+  document.querySelector('.no-msj').style = 'display: none'
+
   output.innerText = encriptar(input.value)
   input.value = ''
 })
 
 btnDesencriptar.onclick = () => {
+  if (input.value === '') return
+
+  document.querySelector('.msj').style = 'display: initial'
+  document.querySelector('.no-msj').style = 'display: none'
+
   console.log('desencriptando')
   output.innerText = desencriptar(input.value)
   input.value = ''

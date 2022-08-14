@@ -4,9 +4,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./normalice.css">
+  <link rel="stylesheet" href="./style.css">
   <title>Encriptador</title>
 </head>
 <body>
   
+  <main>
+    
+    <div class="logo">
+      <img src="./public/Vector.svg" alt="Logo">
+    </div>
+    
+    <section class="input-container">
+      <textarea placeholder="Ingrese el texto aqui" id="input"></textarea>
+      <div class="input-footer">
+
+        <div class="warning">
+          <img src="./public/warning.png" alt="warning icon">
+          <span > Solo letras minúsculas y sin acentos</span>
+        </div>
+        
+        <a href="#output">
+        <button class="btn" id="encriptar">Encriptar</button>
+        </a>
+
+        <a href="#output">
+        <button class="btn" id="btn-desencriptar">Desencriptar</button>
+        </a>
+        
+        
+      </div>
+    </section>
+    
+
+    <section class="output-container">
+
+      <div class="no-msj">
+        <h3>Ningún mensaje fue encontrado</h3>
+        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+      </div>
+
+      <div class="msj" style="display: none ;">
+        <p id='output' class="output">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid asperiores reiciendis voluptate labore ratione aut et esse quibusdam! Incidunt libero cupiditate labore saepe, fugit sapiente provident magni inventore corporis nihil.</p>
+        <button class="btn" id="copy">Copiar</button>
+      </div>
+
+    </section>
+    
+    
+
+
+  </main>
+  
+    
+ 
+
+
+
+
+  
+  
 </body>
+<script src="./index.js"></script>
 </html>
